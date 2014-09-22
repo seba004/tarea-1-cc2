@@ -114,7 +114,11 @@ if __name__ == '__main__':
     s=np.dot(s,np.dot(v,v.T))
     print("esto es s",s)
     inverpower(x,a,s)
-    #rayleigh(t,matriz_a)
+    print("primer ray")
+    rayleigh(x,a)
+    a = a - np.dot(s,np.dot(v,v.T))
+    print("segundo ray")
+    rayleigh(x,a)
     print("qr")
     unshiftedqr(a,6)
 
